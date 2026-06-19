@@ -1,0 +1,28 @@
+---
+---
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我們的夢境空間</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* 這裡的樣式會套用到所有頁面 */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a8c0ff, #d1a8ff);
+    /* 所有的頁面載入時都會觸發這個淡入動畫 */
+    animation: fadeIn 1s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

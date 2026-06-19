@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="content">
+    <h1>夢境守則</h1>
+    <p>這裡是屬於我們的夢，進入前請確認您已準備好尊重這份情感。</p>
+    <a href="/Jasmine.memory" class="next-btn">我準備好了</a>
+  </div>
+</Layout>
+
+<style>
+  /* 這裡只保留該頁面獨有的樣式 */
+  .content { 
+    text-align: center; 
+    max-width: 600px; 
+    padding: 20px; 
+    color: white; 
+    margin: 0 auto;
+    padding-top: 20vh; /* 讓內容稍微往下移一點，避免貼著頂部 */
+  }
+  .next-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: white;
+    color: #8a70ff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .next-btn:hover {
+    background: #e0d0ff;
+  }
+</style>

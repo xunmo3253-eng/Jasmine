@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="container">
+    <h1>歡迎來到我們的夢境</h1>
+    <a href="/agreement" class="enter-btn">進入旅程</a>
+  </div>
+</Layout>
+
+<style>
+  /* 這裡只保留該頁面獨有的排版樣式 */
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .enter-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+  .enter-btn:hover {
+    background: white;
+    color: #8a70ff;
+  }
+</style>
