@@ -23,23 +23,20 @@ import Layout from '../layouts/Layout.astro';
   .counter-box { margin-top: 20px; font-size: 1.2rem; color: white; background: rgba(255, 255, 255, 0.2); padding: 10px; display: inline-block; }
 </style>
 
-<script is:inline>
+<script is:raw>
   function updateCounter() {
-    const start = new Date("2024-05-20T00:00:00");
-    const now = new Date();
-    const diff = now.getTime() - start.getTime();
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    const counter = document.getElementById('counter');
+    var start = new Date("2024-05-20T00:00:00");
+    var now = new Date();
+    var diff = now.getTime() - start.getTime();
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    var counter = document.getElementById('counter');
     if (counter) {
       counter.innerText = "我們已經在一起：" + days + " 天 " + hours + " 時 " + minutes + " 分 " + seconds + " 秒";
     }
   }
-
   setInterval(updateCounter, 1000);
   updateCounter();
 </script>
