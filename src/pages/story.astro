@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// 使用相對路徑直接匯入 Markdown 檔案，不走 collection 邏輯
+// 這裡確保讀取的是 promise 目錄下的檔案
 import * as MyPromise from '../content/promise/my-promise.md';
 ---
 
 <Layout>
   <div class="content">
     <MyPromise.Content />
+    <a href="/agreement" class="next-btn">查看規則</a>
   </div>
 </Layout>
 

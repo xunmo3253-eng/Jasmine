@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// 這裡我們直接引入 Markdown 檔案作為一個模組
+// 這裡確保讀取的是 rules 目錄下的檔案
 import * as AgreementContent from '../content/rules/agreement.md';
 ---
 
 <Layout>
-  <div class="content" style="color: white; padding: 50px;">
-    {/* 這裡直接渲染引入的內容 */}
+  <div class="content">
     <AgreementContent.Content />
-    <a href="/Jasmine.memory" style="color: cyan;">回到記憶頁</a>
+    <a href="/Jasmine.memory" class="next-btn">回到記憶頁</a>
   </div>
 </Layout>
 
