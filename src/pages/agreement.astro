@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// 這裡確保讀取的是 rules 目錄下的檔案
-import * as AgreementContent from '../content/rules/agreement.md';
+// 這裡確保讀取的是 promise 目錄下的檔案
+import * as MyPromise from '../content/promise/my-promise.md';
 ---
 
 <Layout>
   <div class="content">
-    <AgreementContent.Content />
-    <a href="/Jasmine.memory" class="next-btn">回到記憶頁</a>
+    <MyPromise.Content />
+    <a href="/story">查看故事</a>
   </div>
 </Layout>
 
@@ -15,19 +15,10 @@ import * as AgreementContent from '../content/rules/agreement.md';
   .content { 
     text-align: center; 
     max-width: 600px; 
-    padding-top: 20vh; 
+    margin: 0 auto; 
+    padding-top: 10vh; 
     color: white; 
-    margin: 0 auto;
     line-height: 1.8;
   }
-  .next-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background: white;
-    color: #8a70ff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+  .back-link { color: #ffd1dc; font-weight: bold; }
 </style>
