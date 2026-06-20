@@ -2,7 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
 
+// 確保這裡的 'rules' 和 'agreement' 與資料夾/檔名一致
 const entry = await getEntry('rules', 'agreement');
+
+if (!entry) {
+  throw new Error("找不到檔案！請檢查 src/content/rules/agreement.md 是否存在");
+}
+
 const { Content } = await entry.render();
 ---
 
@@ -12,7 +18,6 @@ const { Content } = await entry.render();
     <a href="/Jasmine.memory" class="next-btn">回到記憶頁</a>
   </div>
 </Layout>
-... (你的樣式保持不變)
 
 <style>
   .content { 
