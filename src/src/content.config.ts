@@ -1,12 +1,13 @@
-import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
 
 const promise = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/promise" }),
+  type: 'content',
+  schema: z.object({}),
 });
 
 const rules = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/rules" }),
+  type: 'content',
+  schema: z.object({}),
 });
 
 export const collections = { promise, rules };
