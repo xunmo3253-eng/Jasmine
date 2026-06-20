@@ -1,20 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getEntry } from 'astro:content';
-
-const agreement = await getEntry('rules', 'agreement');
-
-// 如果還是空白，我們直接把錯誤訊息顯示在頁面上
-if (!agreement) {
-  throw new Error("系統讀不到 agreement.md，請確認路徑為 src/content/rules/agreement.md");
-}
-
-const { Content } = await agreement.render();
+// 這裡我們直接引入 Markdown 檔案作為一個模組
+import * as AgreementContent from '../content/rules/agreement.md';
 ---
 
 <Layout>
   <div class="content" style="color: white; padding: 50px;">
-    <Content />
+    {/* 這裡直接渲染引入的內容 */}
+    <AgreementContent.Content />
     <a href="/Jasmine.memory" style="color: cyan;">回到記憶頁</a>
   </div>
 </Layout>
