@@ -2,20 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
 
-// 確保這裡的 'rules' 和 'agreement' 與資料夾/檔名一致
-const entry = await getEntry('rules', 'agreement');
+const agreement = await getEntry('rules', 'agreement');
 
-if (!entry) {
-  throw new Error("找不到檔案！請檢查 src/content/rules/agreement.md 是否存在");
+// 如果還是空白，我們直接把錯誤訊息顯示在頁面上
+if (!agreement) {
+  throw new Error("系統讀不到 agreement.md，請確認路徑為 src/content/rules/agreement.md");
 }
 
-const { Content } = await entry.render();
+const { Content } = await agreement.render();
 ---
 
 <Layout>
-  <div class="content">
+  <div class="content" style="color: white; padding: 50px;">
     <Content />
-    <a href="/Jasmine.memory" class="next-btn">回到記憶頁</a>
+    <a href="/Jasmine.memory" style="color: cyan;">回到記憶頁</a>
   </div>
 </Layout>
 
