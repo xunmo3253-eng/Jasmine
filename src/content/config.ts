@@ -1,5 +1,9 @@
 import { defineCollection } from 'astro:content';
+
+const promiseCollection = defineCollection({ type: 'content' });
+const rulesCollection = defineCollection({ type: 'content' });
+
 export const collections = {
-  'promise': defineCollection({ type: 'content' }),
-  'rules': defineCollection({ type: 'content' }), // 加上這行
+  'promise': promiseCollection,
+  'rules': rulesCollection,
 };
