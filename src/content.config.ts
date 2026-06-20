@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders'; // 這是新版本必須的
+import { glob } from 'astro/loaders';
 
 const promise = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/promise" }),
