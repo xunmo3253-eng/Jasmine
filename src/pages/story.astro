@@ -2,16 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
 
-// 這段會去抓取你的內容
+// 假設這裡要讀取 my-promise
 const entry = await getEntry('promise', 'my-promise');
+
+// 防錯機制：如果讀不到，直接印出明確的錯誤，而不是讓網站崩潰
+if (!entry) {
+  throw new Error("無法找到 'promise' 集合中的 'my-promise' 檔案，請檢查路徑");
+}
+
 const { Content } = await entry.render();
 ---
 
 <Layout>
   <div class="content">
     <Content />
-    
-    <a href="/Jasmine.memory" class="back-link">回到記憶頁</a>
   </div>
 </Layout>
 
