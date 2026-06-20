@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
 
-// 這裡指定去 'rules' 這個資料夾抓 'agreement' 這篇檔案
 const entry = await getEntry('rules', 'agreement');
 const { Content } = await entry.render();
 ---
@@ -10,7 +9,7 @@ const { Content } = await entry.render();
 <Layout>
   <div class="content">
     <Content />
-    <a href="/Jasmine.memory" class="next-btn">我已詳閱規則</a>
+    <a href="/Jasmine.memory" class="next-btn">回到記憶頁</a>
   </div>
 </Layout>
 
@@ -32,7 +31,5 @@ const { Content } = await entry.render();
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
   }
-  .next-btn:hover { background: #e0d0ff; }
 </style>
