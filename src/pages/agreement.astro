@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('rules', 'agreement');
+const { Content } = await entry.render();
 ---
 
 <Layout>
   <div class="content">
-    <h1>我們的約定</h1>
-    <p>這裡是屬於我們的夢境空間。</p>
-    <p>在這裡，我們永遠守護著彼此。</p>
+    <Content />
     <a href="/Jasmine.memory" class="next-btn">我已詳閱規則</a>
   </div>
 </Layout>
@@ -18,6 +20,7 @@ import Layout from '../layouts/Layout.astro';
     padding-top: 20vh; 
     color: white; 
     margin: 0 auto;
+    line-height: 1.8;
   }
   .next-btn {
     display: inline-block;
