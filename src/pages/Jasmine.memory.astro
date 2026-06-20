@@ -31,25 +31,25 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 10px;
     display: inline-block;
   }
-<style>
-  .gallery { 
-    text-align: center; 
-    padding: 50px;
-  }
-  h1 { color: white; }
-  .dream-img { 
-    max-width: 80%; 
-    border-radius: 20px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
-  .counter-box { 
-    margin-top: 20px; 
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    color: white; 
-    background: rgba(255, 255, 255, 0.2); 
-    padding: 10px; 
-    border-radius: 10px;
-    display: inline-block;
-  }
 </style>
+
+<script>
+  function updateCounter() {
+    const start = new Date("2024-05-20T00:00:00");
+    const now = new Date();
+    const diff = now.getTime() - start.getTime();
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    const counter = document.getElementById('counter');
+    if (counter) {
+      counter.innerText = `我們已經在一起：${days} 天 ${hours} 時 ${minutes} 分 ${seconds} 秒`;
+    }
+  }
+
+  setInterval(updateCounter, 1000);
+  updateCounter();
+</script>
